@@ -50,8 +50,7 @@ def code_generator():
             file_object = open("password_data.txt", "a")
             file_object.writelines(f"Generated password on {datetime.now()} for {string4pass} is {secure_pass2}\r")
             file_object.close()
-            print("---------------------------------------------------")
-
+                 
     reset_function()
 
 
@@ -73,10 +72,12 @@ def task_manager():
 
 
 def reset_function():
+    print("---------------------------------------------------")
     print('Press 1 to restart the tool or press 2 to close the tool')
     reset = int(input('>>>'))
 
     if reset == 1:
+        print("----------------------RESTART-----------------------")
         task_manager()
 
     elif reset == 2:
