@@ -8,16 +8,17 @@ length = 0
 
 
 def password_reader():
+    print("---------------------------------------------------")
+    print("Earlier generated passwords are,")
     file_object = open("password_data.txt", "r")
     print(file_object.read())
-    print("")
     time.sleep(1)
     reset_function()
 
 
 def code_generator():
     print("---------------------------------------------------")
-    string4pass = input('''Type a hint or the website name for Tagging your password: ''')
+    string4pass = input('''Type the website name for Tagging your password: ''')
     string_len = int(len(string4pass))
 
     if string_len == 0:
@@ -40,12 +41,12 @@ def code_generator():
             file_object = open("password_data.txt", "a")
             file_object.writelines(f"Generated password on {datetime.now()} for {string4pass} is {secure_pass1}\r")
             file_object.close()
-            print("---------------------------------------------------")
 
         elif pass_type == 2:
             secure_pass2 = ''.join(
                 secrets.choice(string.ascii_uppercase + string.digits + string.ascii_lowercase + string.punctuation)
                 for _ in range(n))
+            print("")
             print(f'Generated password for {string4pass} is : {secure_pass2}')
             file_object = open("password_data.txt", "a")
             file_object.writelines(f"Generated password on {datetime.now()} for {string4pass} is {secure_pass2}\r")
@@ -59,7 +60,7 @@ def task_manager():
     time.sleep(2)
     print('What do you want to do??')
     print('Get random password                  - PRESS 1')
-    print('Check recently generated password    - PRESS 2')
+    print('Check Early generated password       - PRESS 2')
     Task = int(input('>>>'))
 
     if Task == 1:
