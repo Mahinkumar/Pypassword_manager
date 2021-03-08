@@ -74,8 +74,6 @@ def task_manager():
     elif Task == 2:
         password_reader()
 
-    reset_function()
-
 
 def reset_function():
     print("---------------------------------------------------")
